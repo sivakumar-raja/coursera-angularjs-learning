@@ -1,0 +1,63 @@
+<div class="container">
+  <h2>Sign Up!</h2>
+
+  <form name="signupForm" novalidate>
+    <div class="row">
+      First Name: <input type="text" name="firstname" class="form-control"
+      ng-model="signupCtrl.user.firstname" required min-length="4">
+      <span ng-if="(signupForm.firstname.$error.minlength || signupForm.firstname.$error.required)
+        && signupForm.firstname.$touched">
+      Firstname must be at least 4 characters long
+      </span>
+    </div>
+
+    <div class="row">
+      Last Name: <input type="text" name="lastname" class="form-control"
+      ng-model="signupCtrl.user.lastname" required min-length="4">
+      <span
+        ng-if="(signupForm.lastname.$error.minlength || signupForm.lastname.$error.required)
+          && signupForm.lastname.$touched">
+        Lastname must be at least 4 characters long
+      </span>
+     </div>
+
+     <div class="row">
+       Email Address: <input type="email" name="email" class="form-control"
+       ng-model="signupCtrl.user.email" required>
+       <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+            Must be a valid email address: handle@domain format
+       </span>
+     </div>
+
+     <div class="row">
+       Phone #: <input type="text" name="phone" class="form-control"
+       ng-model="signupCtrl.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+     </div>
+
+    <div class="row">
+      Menu #: <input type="text" name="menuNo" class="form-control"
+      ng-model="signupCtrl.user.favouriteMenu" required>
+      <span
+        ng-if="signupForm.menuNo.$error.required && signupForm.menuNo.$touched">
+        Favourite menu field should not be left empty
+      </span>
+     </div>
+
+     <div class="row">
+       <button class="btn-info" ng-disabled="signupForm.$invalid" ng-click="signupCtrl.submit()">Submit</button>
+     </div>
+
+     <div class="row" ng-if="signupCtrl.user.menuDetail!=null">
+      Your information has been saved
+    </div>
+
+    <div class="row" ng-if="signupCtrl.user.menuDetail===null">
+     No such menu number exists
+   </div>
+
+  </form>
+
+</div>
