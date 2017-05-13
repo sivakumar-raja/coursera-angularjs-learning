@@ -200,3 +200,7 @@ a[ui-sref="admin.auth"] {
   }
   /* End Header */
 }
+
+.form-div {
+  margin-bottom: 10px;
+}

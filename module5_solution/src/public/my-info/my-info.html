@@ -11,6 +11,9 @@
     <label><h2>Your Favourite Menu</h2></label>
   </div>
   <div class="row">
-    <label><h3>{{myinfoCtrl.userInfo.menuDetail.name}}</h3> <h4>{{myinfoCtrl.userInfo.menuDetail.description}}</h4></label>
+    <label><h3>{{myinfoCtrl.userInfo.menuDetail.name}}</h3></label>
+    <img class="img-responsive" width="250" height="150"
+    ng-src="{{myinfoCtrl.apiCustomPath}}/images/{{myinfoCtrl.userInfo.menuDetail.short_name}}.jpg" alt="{{myinfoCtrl.userInfo.menuDetail.name}}">
+    <label><h4>{{myinfoCtrl.userInfo.menuDetail.description}}</h4></label>
   </div>
 </div>
