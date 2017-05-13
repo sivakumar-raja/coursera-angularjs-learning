@@ -13,11 +13,12 @@ function SignUpController(SignUpService) {
       var response = SignUpService.getMenuDetail($ctrl.user.favouriteMenu);
       response.success(function(data){
         $ctrl.user.menuDetail = data;
+        SignUpService.setUserInfo($ctrl.user);
       });
       response.error(function(data){
         $ctrl.user.menuDetail = null;
+        SignUpService.setUserInfo(null);
       });
-      SignUpService.setUserInfo($ctrl.user);
     }
 }
 
