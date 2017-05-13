@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" ng-if="myinfoCtrl.userInfo===null">
+   Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now</a>
+  </div>
+
+  <div class="row" ng-if="myinfoCtrl.userInfo!=null">
+   <div class="row">
+     <label><h4>Welcome {{myinfoCtrl.userInfo.firstname}} {{myinfoCtrl.userInfo.lastname}}</h4></label>
+  </div>
+  <div class="row">
+    <label><h2>Your Favourite Menu</h2></label>
+  </div>
+  <div class="row">
+    <label><h3>{{myinfoCtrl.userInfo.menuDetail.name}}</h3></label>
+    <img class="img-responsive" width="250" height="150"
+    ng-src="{{myinfoCtrl.apiCustomPath}}/images/{{myinfoCtrl.userInfo.menuDetail.short_name}}.jpg" alt="{{myinfoCtrl.userInfo.menuDetail.name}}">
+    <label><h4>{{myinfoCtrl.userInfo.menuDetail.description}}</h4></label>
+  </div>
+</div>
